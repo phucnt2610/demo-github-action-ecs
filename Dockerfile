@@ -8,6 +8,7 @@ COPY package*.json ./
 # files in the host folder
 RUN npm ci --omit=dev
 
+COPY . .
 # Specify the command to run when launching the container
 EXPOSE 4000
-CMD ["nodemon", "index.js"]
+CMD ["node", "index.js"]
