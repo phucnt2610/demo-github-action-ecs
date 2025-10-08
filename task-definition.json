@@ -1,0 +1,76 @@
+{
+    "compatibilities": [
+        "EC2",
+        "FARGATE",
+        "MANAGED_INSTANCES"
+    ],
+    "containerDefinitions": [
+        {
+            "cpu": 0,
+            "environment": [
+                {
+                    "name": "PORT",
+                    "value": "4000"
+                }
+            ],
+            "environmentFiles": [],
+            "essential": true,
+            "image": "036313481159.dkr.ecr.ap-northeast-1.amazonaws.com/my-ecr-repo@sha256:328a874a7b5b8eca710b931709d8914cbcd08fc5488c9f8c77741ce212dafdfc",
+            "mountPoints": [],
+            "name": "demo-container",
+            "portMappings": [
+                {
+                    "appProtocol": "http",
+                    "containerPort": 4000,
+                    "hostPort": 4000,
+                    "name": "container-port",
+                    "protocol": "tcp"
+                }
+            ],
+            "systemControls": [],
+            "ulimits": [],
+            "volumesFrom": []
+        }
+    ],
+    "cpu": "512",
+    "executionRoleArn": "arn:aws:iam::036313481159:role/ecsTaskExecutionRole",
+    "family": "task-01",
+    "memory": "1024",
+    "networkMode": "awsvpc",
+    "placementConstraints": [],
+    "registeredAt": "2025-10-08T04:16:44.753Z",
+    "registeredBy": "arn:aws:iam::036313481159:user/ervn-phuc",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "revision": 1,
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "status": "ACTIVE",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:036313481159:task-definition/task-01:1",
+    "taskRoleArn": "arn:aws:iam::036313481159:role/ecsTaskExecutionRole",
+    "volumes": [],
+    "tags": []
+}
