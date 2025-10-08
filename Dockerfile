@@ -9,5 +9,5 @@ COPY package*.json ./
 RUN npm ci --omit=dev
 
 # Specify the command to run when launching the container
-EXPOSE 80
+EXPOSE 4000
 CMD ["nodemon", "index.js"]
