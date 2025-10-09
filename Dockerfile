@@ -1,4 +1,4 @@
-#buld stage
+# Build stage
 FROM public.ecr.aws/docker/library/node:22 AS build
 
 WORKDIR /srv
@@ -9,6 +9,8 @@ COPY package*.json ./
 RUN npm ci --omit=dev
 
 COPY . .
-# Specify the command to run when launching the container
+
 EXPOSE 4000
+
+# Specify the command to run when launching the container
 CMD ["node", "index.js"]
