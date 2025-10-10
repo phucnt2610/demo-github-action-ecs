@@ -43,6 +43,7 @@
         }
     ],
     "cpu": "512",
+    "enableFaultInjection": false,
     "executionRoleArn": "arn:aws:iam::036313481159:role/ecsTaskExecutionRole",
     "family": "task-definition-develop",
     "memory": "1024",
