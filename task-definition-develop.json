@@ -15,11 +15,11 @@
             ],
             "environmentFiles": [],
             "essential": true,
-            "image": "036313481159.dkr.ecr.ap-northeast-1.amazonaws.com/my-ecr-repo/production:latest",
+            "image": "036313481159.dkr.ecr.ap-northeast-1.amazonaws.com/my-ecr-repo/develop:latest",
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/task-definiton-production",
+                    "awslogs-group": "/ecs/task-definition-develop",
                     "awslogs-create-group": "true",
                     "awslogs-region": "ap-northeast-1",
                     "awslogs-stream-prefix": "ecs"
@@ -27,7 +27,7 @@
                 "secretOptions": []
             },
             "mountPoints": [],
-            "name": "container-production",
+            "name": "conainer-develop",
             "portMappings": [
                 {
                     "appProtocol": "http",
@@ -44,11 +44,11 @@
     ],
     "cpu": "512",
     "executionRoleArn": "arn:aws:iam::036313481159:role/ecsTaskExecutionRole",
-    "family": "task-definiton-production",
+    "family": "task-definition-develop",
     "memory": "1024",
     "networkMode": "awsvpc",
     "placementConstraints": [],
-    "registeredAt": "2025-10-10T06:47:52.515Z",
+    "registeredAt": "2025-10-10T06:49:03.367Z",
     "registeredBy": "arn:aws:iam::036313481159:user/ervn-phuc",
     "requiresAttributes": [
         {
@@ -88,7 +88,7 @@
         "operatingSystemFamily": "LINUX"
     },
     "status": "ACTIVE",
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:036313481159:task-definition/task-definiton-production:1",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:036313481159:task-definition/task-definition-develop:1",
     "taskRoleArn": "arn:aws:iam::036313481159:role/ecsTaskExecutionRole",
     "volumes": [],
     "tags": []
