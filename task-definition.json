@@ -1,8 +1,8 @@
 {
     "compatibilities": [
         "EC2",
-        "FARGATE",
-        "MANAGED_INSTANCES"
+        "MANAGED_INSTANCES",
+        "FARGATE"
     ],
     "containerDefinitions": [
         {
@@ -19,7 +19,7 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/task-01",
+                    "awslogs-group": "/ecs/task-nodejs-app",
                     "awslogs-create-group": "true",
                     "awslogs-region": "ap-northeast-1",
                     "awslogs-stream-prefix": "ecs"
@@ -27,13 +27,20 @@
                 "secretOptions": []
             },
             "mountPoints": [],
-            "name": "demo-container",
+            "name": "container-app",
             "portMappings": [
                 {
                     "appProtocol": "http",
                     "containerPort": 4000,
                     "hostPort": 4000,
                     "name": "container-port",
+                    "protocol": "tcp"
+                },
+                {
+                    "appProtocol": "http",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "name": "container-port-test",
                     "protocol": "tcp"
                 }
             ],
@@ -44,11 +51,11 @@
     ],
     "cpu": "512",
     "executionRoleArn": "arn:aws:iam::036313481159:role/ecsTaskExecutionRole",
-    "family": "task-01",
+    "family": "task-nodejs-app",
     "memory": "1024",
     "networkMode": "awsvpc",
     "placementConstraints": [],
-    "registeredAt": "2025-10-08T04:47:02.156Z",
+    "registeredAt": "2025-10-10T01:35:00.325Z",
     "registeredBy": "arn:aws:iam::036313481159:user/ervn-phuc",
     "requiresAttributes": [
         {
@@ -62,9 +69,6 @@
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
         },
         {
             "name": "com.amazonaws.ecs.capability.task-iam-role"
@@ -91,7 +95,7 @@
         "operatingSystemFamily": "LINUX"
     },
     "status": "ACTIVE",
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:036313481159:task-definition/task-01:2",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:036313481159:task-definition/task-nodejs-app:2",
     "taskRoleArn": "arn:aws:iam::036313481159:role/ecsTaskExecutionRole",
     "volumes": [],
     "tags": []
